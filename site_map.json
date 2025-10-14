@@ -1,0 +1,169 @@
+{
+  "cities": [
+    {
+      "name": "Belo Horizonte",
+      "floors": [
+        {
+          "id": "6",
+          "label": "6º andar",
+          "rooms": [
+            "6A",
+            "6B",
+            "6C",
+            "6D",
+            "6E",
+            "6F",
+            "Exclusiva Board - A",
+            "Exclusiva Board - C",
+            "Exclusiva Board - D"
+          ],
+          "printers": [
+            "BH-6-PRN"
+          ]
+        },
+        {
+          "id": "5",
+          "label": "5º andar",
+          "rooms": [
+            "5A",
+            "5B",
+            "5C",
+            "5D",
+            "5E",
+            "5F",
+            "5G"
+          ],
+          "printers": [
+            "BH-5-PRN"
+          ]
+        },
+        {
+          "id": "4",
+          "label": "4º andar",
+          "rooms": [
+            "4A",
+            "4B",
+            "4C",
+            "4D",
+            "4E",
+            "4F"
+          ],
+          "printers": [
+            "BH-4-PRN"
+          ]
+        },
+        {
+          "id": "3",
+          "label": "3º andar",
+          "rooms": [
+            "3A",
+            "3B",
+            "3C",
+            "3D",
+            "3E",
+            "3F",
+            "3G - Exclusivas para clientes - New Business",
+            "3H Exclusivas clientes New Business",
+            "3J",
+            "3K",
+            "3L",
+            "3M",
+            "T1 - A",
+            "T2 - A"
+          ],
+          "printers": [
+            "BH-3-PRN"
+          ]
+        },
+        {
+          "id": "2",
+          "label": "2º andar",
+          "rooms": [
+            "2C",
+            "2D"
+          ],
+          "printers": [
+            "BH-2-PRN"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "São Paulo",
+      "floors": []
+    },
+    {
+      "name": "Amsterdam",
+      "floors": [
+        {
+          "id": "x",
+          "label": "Outros",
+          "rooms": [
+            "Board Meeting Room A",
+            "Meeting Room B"
+          ],
+          "printers": [
+            "AMS-PRN-01"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "México",
+      "floors": [
+        {
+          "id": "25",
+          "label": "25º andar",
+          "rooms": [
+            "Sala de Juntas - 1",
+            "Sala de Juntas - 2",
+            "Sala de Juntas - 3"
+          ],
+          "printers": [
+            "MX-25-PRN"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Colômbia",
+      "floors": [
+        {
+          "id": "3",
+          "label": "3º andar",
+          "rooms": [
+            "Sala de Juntas - 3"
+          ],
+          "printers": [
+            "CO-3-PRN"
+          ]
+        },
+        {
+          "id": "2",
+          "label": "2º andar",
+          "rooms": [
+            "Sala de Juntas - 2"
+          ],
+          "printers": [
+            "CO-2-PRN"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bogotá",
+      "floors": [
+        {
+          "id": "23",
+          "label": "Novo Andar de teste",
+          "rooms": [
+            "Sala de Testes 1"
+          ],
+          "printers": [
+            "Impressora em Testes"
+          ]
+        }
+      ]
+    }
+  ]
+}

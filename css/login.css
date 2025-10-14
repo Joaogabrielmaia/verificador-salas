@@ -1,0 +1,210 @@
+.lock {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(236, 236, 238, 0.534), rgba(180, 180, 180, 0.774));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 1rem;
+    backdrop-filter: blur(12px);
+}
+
+.lock.hidden {
+    display: none !important;
+}
+
+.lock-card {
+    width: min(95vw, 400px);
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 2.5rem 2rem;
+    text-align: center;
+}
+
+.lock-brand {
+    margin-bottom: 1.5rem;
+}
+
+.lock-icon-large {
+    margin-bottom: 1rem;
+}
+
+.lock-icon-large i {
+    font-size: 3rem;
+    background: linear-gradient(135deg, var(--hot), var(--hot-600));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.lock-title {
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+}
+
+.lock-subtitle {
+    color: var(--muted);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.lock-form {
+    width: 100%;
+}
+
+.input-group-lock {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-hot {
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    width: 100%;
+    height: 56px;
+    padding: 0 3.5rem 0 3.5rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+    font-weight: 500;
+}
+
+.input-hot:focus {
+    border-color: var(--hot);
+    box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.15);
+    outline: none;
+}
+
+.input-hot::placeholder {
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+.lock-icon {
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--hot);
+    font-size: 1.2rem;
+    z-index: 2;
+}
+
+.btn-lock {
+    background: linear-gradient(135deg, var(--hot), var(--hot-600));
+    border: 0;
+    color: #fff;
+    border-radius: 12px;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    width: 100%;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-lock:hover:not(:disabled) {
+    background: linear-gradient(135deg, var(--hot-600), var(--hot-700));
+    transform: translateY(-2px);
+}
+
+.btn-lock:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.lock-message {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+    min-height: 1.25rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.lock-message.success {
+    color: #16a34a;
+}
+
+.btn-pwd-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-size: 1.1rem;
+    z-index: 2;
+}
+
+.btn-pwd-toggle:hover {
+    color: var(--ink);
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.lock-footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+@media (max-width: 576px) {
+    .lock-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .input-hot {
+        height: 52px;
+        font-size: 16px;
+    }
+}
+
+.btn-lock.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.btn-lock.loading::after {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    border: 2px solid transparent;
+    border-top: 2px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.login-logo-lock {
+    height: 44px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}

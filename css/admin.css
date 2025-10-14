@@ -1,0 +1,257 @@
+:root {
+    --hot: #ff7a00;
+    --hot-600: #e86d00;
+    --hot-700: #cc5f00;
+    --ink: #0f172a;
+    --muted: #6b7280;
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --border: #e6e8ef;
+    --radius: 16px;
+    --shadow: 0 10px 28px rgba(15, 23, 42, .08);
+}
+
+body {
+    background-color: var(--bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sidebar {
+    background: var(--card);
+    color: var(--ink);
+    min-height: 100vh;
+    box-shadow: 2px 0 10px var(--shadow);
+}
+
+.sidebar .nav-link {
+    color: var(--ink);
+    padding: 12px 20px;
+    margin: 4px 0;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--ink);
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.main-header {
+    background-color: var(--card);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 15px 0;
+    margin: 1rem;
+    border-radius: 12px;
+}
+
+.page-title {
+    color: var(--ink);
+    font-weight: 600;
+    margin: 1rem;
+}
+
+.page-subtitle {
+    color: #6c757d;
+    font-size: 0.95rem;
+    margin: 1rem;
+}
+
+.stats-card {
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--border);
+}
+
+.card-body {
+    margin: 1rem;
+}
+
+.stats-card .card-body {
+    padding: 20px;
+}
+
+.stats-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.icon-building {
+    background-color: #f7af6d;
+    color: #9e5210;
+}
+
+.icon-floors {
+    background-color: #f7af6d;
+    color: #9e5210;
+}
+
+.icon-rooms {
+    background-color: #f7af6d;
+    color: #9e5210;
+}
+
+.icon-printers {
+    background-color: #f7af6d;
+    color: #9e5210;
+}
+
+.city-card {
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s;
+    border: none;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.city-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--hover-shadow);
+}
+
+.city-card .card-header {
+    color: var(--ink);
+    padding: 15px 20px;
+    border-bottom: none;
+}
+
+.room-divider {
+    height: 2px;
+    background: linear-gradient(90deg, rgb(241, 119, 4), transparent);
+    margin: 10px 0 14px;
+    border-radius: 2px;
+    width: 100%;
+}
+
+.city-card .stats-badge {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+}
+
+.btn-primary {
+    background-color: var(--hot);
+    border-color: var(--card);
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-weight: 500;
+    margin: 1rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--hot-700);
+    border-color: var(--hot-700);
+}
+
+.btn-outline-primary {
+    color: var(--card);
+    background-color: var(--hot);
+    border-radius: 8px;
+    border: transparent;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--hot-700);
+}
+
+.tree-item {
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.tree-item:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.tree-item.active {
+    background-color: #f7af6d;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6c757d;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-outline-danger {
+    color: var(--hot);
+    border: 1px solid var(--hot);
+}
+
+.text-white-50 {
+    color: #6b7280 !important;
+}
+
+.login-logo {
+    height: 44px;
+    width: auto;
+    display: block;
+}
+
+.rounded-pill {
+    background-color: var(--hot) !important;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        min-height: auto;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-buttons .btn {
+        width: 100%;
+    }
+
+    .page-title {
+        font-size: 16px;
+    }
+
+    .main-header {
+        margin-block: 1rem;
+        margin-inline: 0.5rem;
+    }
+}

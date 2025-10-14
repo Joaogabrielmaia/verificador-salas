@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="shortcut icon" href="img/LogoHotmart.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div id="lock" class="lock">
+        <div class="lock-card">
+            <img src="img/Hotmart.png" alt="Hotmart" class="login-logo-lock">
+            <h1 class="lock-title">Acesso Restrito</h1>
+            <p class="lock-subtitle">Digite a senha para acessar o sistema</p>
+
+            <div class="lock-form">
+                <div class="input-group-lock">
+                    <i class="bi bi-key-fill lock-icon"></i>
+                    <input type="password" id="lockPwd" class="input-hot" placeholder="Digite sua senha"
+                        autocomplete="current-password" autofocus>
+                    <button type="button" id="btnPwdToggle" class="btn-pwd-toggle">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                </div>
+
+                <button id="btnLockEnter" class="btn-lock">
+                    <i class="bi bi-unlock-fill me-2"></i>Entrar no Sistema
+                </button>
+
+                <div id="lockMsg" class="lock-message"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-3 col-lg-2 sidebar p-0">
+                <div class="d-flex flex-column p-3">
+                    <div class="mb-4 mt-2 text-center">
+                        <img src="img/Hotmart.png" alt="Hotmart" class="login-logo">
+                        <small class="text-white-50">Administração</small>
+                    </div>
+
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <li class="nav-item">
+                            <a href="admin.html" class="nav-link active">
+                                <i class="bi bi-buildings"></i>
+                                Cidades e Andares
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">
+                                <i class="bi bi-house-door"></i>
+                                Home
+                            </a>
+                        </li>
+                    </ul>
+
+                    <hr class="text-white-50">
+
+                    <div class="mb-3">
+                        <h6 class="text-white-50 mb-2">ESTRUTURA DO SISTEMA</h6>
+                        <div id="treeView" class="tree-view">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-9 col-lg-10 ms-sm-auto px-4">
+                <div class="main-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h1 class="page-title">Painel de gerenciamento</h1>
+                        </div>
+                        <button class="btn btn-primary" onclick="openAddCityModal()">
+                            <i class="bi bi-plus-circle me-2"></i>Nova Cidade
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="row mb-4">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stats-card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="stats-icon icon-building">
+                                        <i class="bi bi-buildings"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="mb-0" id="totalCities">0</h4>
+                                        <p class="text-muted mb-0">Cidades</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stats-card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="stats-icon icon-floors">
+                                        <i class="bi bi-layers"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="mb-0" id="totalFloors">0</h4>
+                                        <p class="text-muted mb-0">Andares</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stats-card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="stats-icon icon-rooms">
+                                        <i class="bi bi-door-closed"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="mb-0" id="totalRooms">0</h4>
+                                        <p class="text-muted mb-0">Salas</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stats-card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="stats-icon icon-printers">
+                                        <i class="bi bi-printer"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="mb-0" id="totalPrinters">0</h4>
+                                        <p class="text-muted mb-0">Impressoras</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row" id="citiesList">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="cityModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cityModalTitle">Nova Cidade</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="cityName" class="form-label">Nome da Cidade</label>
+                        <input type="text" class="form-control" id="cityName" placeholder="Ex: Belo Horizonte">
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h6>Andares</h6>
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="addNewFloor()">
+                            <i class="bi bi-plus"></i> Adicionar Andar
+                        </button>
+                    </div>
+
+                    <div id="floorsContainer">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="saveCity()">Salvar Cidade</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="floorModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="floorModalTitle">Novo Andar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="floorForm">
+                    <input type="hidden" id="floorId">
+                    
+                    <div class="mb-3">
+                        <label for="floorIdInput" class="form-label">ID do Andar *</label>
+                        <input type="text" class="form-control" id="floorIdInput" 
+                               placeholder="Ex: 6, 5, 4 (apenas números)" required>
+                        <div class="form-text">Identificador único do andar (apenas números)</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="floorLabel" class="form-label">Nome do Andar</label>
+                        <input type="text" class="form-control" id="floorLabel" placeholder="Ex: 6º andar">
+                    </div>
+                    <div class="mb-3">
+                        <label for="floorRooms" class="form-label">Salas (uma por linha)</label>
+                        <textarea class="form-control" id="floorRooms" rows="4"
+                            placeholder="Ex: Sala 101&#10;Sala 102&#10;Sala 103"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="floorPrinters" class="form-label">Impressoras (uma por linha)</label>
+                        <textarea class="form-control" id="floorPrinters" rows="4"
+                            placeholder="Ex: Impressora 1&#10;Impressora 2"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="saveFloor()">Salvar Andar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="admin.js"></script>
+    <script src="login.js"></script>
+</body>
+
+</html>
