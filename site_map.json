@@ -149,21 +149,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "Bogotá",
-      "floors": [
-        {
-          "id": "23",
-          "label": "Novo Andar de teste",
-          "rooms": [
-            "Sala de Testes 1"
-          ],
-          "printers": [
-            "Impressora em Testes"
-          ]
-        }
-      ]
     }
   ]
 }
